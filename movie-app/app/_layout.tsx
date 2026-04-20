@@ -1,14 +1,5 @@
 import { Tabs } from 'expo-router';
-import { View, Text, StyleSheet } from 'react-native';
-
-function TabIcon({ emoji, label, focused }: { emoji: string; label: string; focused: boolean }) {
-  return (
-    <View style={styles.tabItem}>
-      <Text style={styles.emoji}>{emoji}</Text>
-      <Text style={[styles.label, focused && styles.activeLabel]}>{label}</Text>
-    </View>
-  );
-}
+import { Ionicons, FontAwesome5, MaterialIcons } from '@expo/vector-icons';
 
 export default function TabLayout() {
   return (
@@ -16,59 +7,64 @@ export default function TabLayout() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: '#1e1e2e',
-          borderTopColor: '#2a2a3e',
+          backgroundColor: '#1a1a2a',
+          borderTopWidth: 0,
           height: 70,
           paddingBottom: 10,
         },
         tabBarActiveTintColor: '#e8453c',
         tabBarInactiveTintColor: '#666',
+        tabBarLabelStyle: {
+          fontSize: 11,
+          marginTop: 2,
+        },
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
-          tabBarLabel: '',
-          tabBarIcon: ({ focused }) => <TabIcon emoji="⚽" label="Matches" focused={focused} />,
+          title: 'Matches',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="football-outline" size={size} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
         name="watchlist"
         options={{
-          tabBarLabel: '',
-          tabBarIcon: ({ focused }) => <TabIcon emoji="🔖" label="Watchlist" focused={focused} />,
+          title: 'Watchlist',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="star-outline" size={size} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
         name="earnings"
         options={{
-          tabBarLabel: '',
-          tabBarIcon: ({ focused }) => <TabIcon emoji="📈" label="Earnings" focused={focused} />,
+          title: 'Earnings',
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome5 name="dollar-sign" size={size} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
         name="wallet"
         options={{
-          tabBarLabel: '',
-          tabBarIcon: ({ focused }) => <TabIcon emoji="👛" label="Wallet" focused={focused} />,
+          title: 'Wallet',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="wallet-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="refresh"
+        options={{
+          title: 'Refresh',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialIcons name="refresh" size={size} color={color} />
+          ),
         }}
       />
     </Tabs>
   );
 }
-
-const styles = StyleSheet.create({
-  tabItem: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 4,
-  },
-  emoji: { fontSize: 20 },
-  label: {
-    fontSize: 10,
-    color: '#666',
-  },
-  activeLabel: {
-    color: '#e8453c',
-  },
-});
