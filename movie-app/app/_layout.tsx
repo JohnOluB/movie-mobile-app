@@ -21,7 +21,7 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="index"
+        name="Matches"
         options={{
           title: 'Matches',
           tabBarIcon: ({ color, size }) => (
@@ -53,15 +53,6 @@ export default function TabLayout() {
           title: 'Wallet',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="wallet-outline" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="refresh"
-        options={{
-          title: 'Refresh',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="refresh" size={size} color={color} />
           ),
         }}
       />

@@ -12,7 +12,7 @@ const MATCHES = [
   { time: '21:00', period: 'FT', home: 'Liverpool', away: 'Aston Villa', homeScore: 3, awayScore: 1, bookmarked: false, live: false },
 ];
 
-export default function MatchesScreen() {
+export default function MatchScreen() {
   const [activeTab, setActiveTab] = useState('All');
 
   return (
