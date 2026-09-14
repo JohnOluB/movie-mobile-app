@@ -1,6 +1,9 @@
 import { ScrollView, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import {MaterialIcons} from '@expo/vector-icons';
 import { useState } from 'react';
+
+
 
 const TABS = ['All', 'LIVE', 'Upcoming', 'Finished'];
 
@@ -23,7 +26,8 @@ export default function MatchScreen() {
       <View style={styles.header}>
         <Text style={styles.logo}>🪸</Text>
         <TouchableOpacity style={styles.dropdown}>
-          <Text style={styles.dropdownText}>⚽ Football ▾</Text>
+        <MaterialIcons name="sports-soccer" size={20} color="white" />
+          <Text style={styles.dropdownText}> Football ▾</Text>
         </TouchableOpacity>
         <Text style={styles.menuIcon}>☰</Text>
       </View>
@@ -44,6 +48,7 @@ export default function MatchScreen() {
           ))}
         </View>
         <View style={styles.tabIcons}>
+        <MaterialIcons name="calendar-month" size={24} color="white" />
           <Text style={styles.iconText}>📅</Text>
           <Text style={styles.iconText}>↕</Text>
           <Text style={styles.iconText}>🔍</Text>
@@ -142,6 +147,9 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     paddingHorizontal: 14,
     paddingVertical: 6,
+  },
+  footballIcon:{
+    size:'18',
   },
   dropdownText: { color: '#fff', fontSize: 14 },
   menuIcon: { color: '#fff', fontSize: 22 },
