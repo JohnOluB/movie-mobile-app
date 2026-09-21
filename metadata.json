@@ -1,0 +1,6 @@
+{
+  "name": "Live Match Scores",
+  "description": "Live football scores, match schedules, league standings, watchlist, and wallet tracker.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

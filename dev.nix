@@ -21,7 +21,7 @@
       enable = true;
       previews = {
         web = {
-          command = ["npx" "expo" "start" "--web" "--port" "$PORT" "--hostname" "0.0.0.0"];
+          command = ["npm" "run" "dev"];
           manager = "web";
         };
       };
